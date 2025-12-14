@@ -1,0 +1,29 @@
+<aside class="sidebar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="CodeQuest.png" alt="Logo" id="codeQuest-logo" />
+    <span class="logo-text">CodeQuest</span>
+  </div>
+
+  <!-- Menu -->
+  <nav class="menu">
+    <a
+      *ngFor="let item of menu"
+      [routerLink]="item.route"
+      routerLinkActive="active"
+      class="menu-item"
+    >
+      <span> <img [src]="item.icon" [alt]="item.label" id="item-logo" /></span>
+      <span>{{ item.label }}</span>
+    </a>
+  </nav>
+
+  <!-- User Info -->
+  <div class="user">
+    <img src="avatar.png" alt="user" />
+    <div>
+      <p class="name">USUARIO POR DEFECTO</p>
+      <span class="role">PRO MEMBER</span>
+    </div>
+  </div>
+</aside>
