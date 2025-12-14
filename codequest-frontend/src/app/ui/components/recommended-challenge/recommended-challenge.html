@@ -1,0 +1,41 @@
+<section class="card">
+  <!-- LEFT -->
+  <div class="content">
+    <span class="tag"> ✨ {{ tag }} </span>
+
+    <h1>{{ title }}</h1>
+
+    <p>{{ description }}</p>
+
+    <div class="meta">
+      <div class="meta-item">
+        <span class="bar-icon"></span>
+        <span>{{ level }}</span>
+      </div>
+
+      <div class="meta-item">
+        <span class="clock-icon"></span>
+        <span>{{ duration }}</span>
+      </div>
+
+      <div class="meta-item xp">
+        <span class="star-icon"></span>
+        <span>+{{ xp }} XP</span>
+      </div>
+    </div>
+
+    <app-button variant="primary"
+      >Start a new challenge →
+      <!--<img src="search.png" alt="aa" class="img-btn" /> -->
+    </app-button>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="preview">
+    <img [src]="image" alt="challenge preview" />
+    <span class="live">
+      <span class="dot"></span>
+      Live Environment
+    </span>
+  </div>
+</section>

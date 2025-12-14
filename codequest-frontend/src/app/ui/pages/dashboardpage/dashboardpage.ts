@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Sidebar } from '../../components/sidebar/sidebar';
 import { Header } from '../../components/header/header';
 import { Button } from '../../shared/button/button';
+import { RecommendedChallenge } from '../../components/recommended-challenge/recommended-challenge';
 
 @Component({
   selector: 'app-dashboardpage',
-  imports: [Button],
+  imports: [Button, RecommendedChallenge],
   templateUrl: './dashboardpage.html',
   styleUrl: './dashboardpage.css',
 })
