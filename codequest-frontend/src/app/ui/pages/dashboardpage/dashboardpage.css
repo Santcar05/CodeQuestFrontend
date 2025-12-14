@@ -6,6 +6,9 @@
   align-items: center;
   margin-bottom: 32px;
 }
+app-recommended-challenge {
+  margin: 0 32px;
+}
 #greeting-text {
   margin-bottom: 24px;
   display: flex;
@@ -120,6 +123,10 @@
 
 .dashboard-icon {
   filter: invert(1);
-  width: 24px;
-  height: 24px;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
 }

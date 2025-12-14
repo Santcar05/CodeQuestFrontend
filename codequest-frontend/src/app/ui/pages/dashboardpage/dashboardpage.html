@@ -40,7 +40,7 @@
         </div>
 
         <div class="progress">
-          <div class="bar" [style.width.%]="xpPercent"></div>
+          <app-progress-bar [value]="1250" [max]="2000"></app-progress-bar>
         </div>
       </div>
     </div>
@@ -49,4 +49,11 @@
   <app-recommended-challenge
     image="https://images.unsplash.com/photo-1555949963-aa79dcee981c"
   ></app-recommended-challenge>
+
+  <h1 class="section-title">Your Courses</h1>
+  <div class="courses-grid">
+    <ng-container *ngFor="let course of courses">
+      <app-minimalized-course-card></app-minimalized-course-card>
+    </ng-container>
+  </div>
 </div>

@@ -1,0 +1,28 @@
+<div
+  class="progress"
+  [style.height.px]="height"
+  [style.border-radius.px]="radius"
+  [style.background]="background"
+>
+  <div
+    class="bar"
+    [style.width.%]="percentage"
+    [style.background]="'linear-gradient(90deg,' + colorFrom + ',' + colorTo + ')'"
+    [class.animated]="animated"
+  ></div>
+</div>
+
+<!-- Uso del componente -->
+<!--
+<app-progress-bar
+  [value]="1250"
+  [max]="2000"
+  [height]="20"
+  [radius]="10"
+  [colorFrom]="'#4caf50'"
+  [colorTo]="'#81c784'"
+  [background]="'#e0e0e0'"
+  [animated]="true"
+></app-progress-bar>
+
+ -->
