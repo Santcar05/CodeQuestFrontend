@@ -1,1 +1,52 @@
-<app-sidebar></app-sidebar>
+<div id="main-content">
+  <div id="dashboard-header">
+    <!-- Greeting text-->
+
+    <div id="greeting-text">
+      <h1>Welcome back, User!</h1>
+      <p>Here's what's happening with your projects today.</p>
+    </div>
+
+    <div class="stats">
+      <!-- LEVEL -->
+      <div class="card">
+        <div class="icon level">
+          <img src="badge.png" alt="level" class="dashboard-icon" />
+        </div>
+
+        <div class="info">
+          <span class="label">Current Level</span>
+          <strong>Level {{ level }}</strong>
+        </div>
+      </div>
+
+      <!-- STREAK -->
+      <div class="card">
+        <div class="icon streak">
+          <img src="streak.png" alt="streak" class="dashboard-icon" />
+        </div>
+
+        <div class="info">
+          <span class="label">Daily Streak</span>
+          <strong>{{ streak }} Days</strong>
+        </div>
+      </div>
+
+      <!-- XP -->
+      <div class="card xp">
+        <div class="xp-header">
+          <span class="label">XP Progress</span>
+          <span class="xp-text">{{ currentXP }} / {{ maxXP }}</span>
+        </div>
+
+        <div class="progress">
+          <div class="bar" [style.width.%]="xpPercent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-button variant="primary"
+    >Start a new challenge
+    <img src="search.png" alt="aa" class="img-btn" />
+  </app-button>
+</div>
