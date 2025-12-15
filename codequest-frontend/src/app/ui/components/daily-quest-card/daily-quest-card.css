@@ -27,8 +27,6 @@
     width: 26px;
     height: 26px;
   }
-  .completed-icon {
-  }
   .incomplete-icon {
     filter: invert(1);
   }
