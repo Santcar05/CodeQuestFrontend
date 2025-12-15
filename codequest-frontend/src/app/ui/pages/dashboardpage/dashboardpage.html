@@ -51,9 +51,24 @@
   ></app-recommended-challenge>
 
   <h1 class="section-title">Your Courses</h1>
-  <div class="courses-grid">
-    <ng-container *ngFor="let course of courses">
-      <app-minimalized-course-card></app-minimalized-course-card>
-    </ng-container>
+  <div class="container-70-30">
+    <div class="courses-grid">
+      <ng-container *ngFor="let course of paginatedCourses">
+        <app-minimalized-course-card></app-minimalized-course-card>
+      </ng-container>
+
+      <div class="pagination">
+        <button class="page-btn" (click)="prevPage()" [disabled]="page === 1">← Previous</button>
+
+        <span class="page-info"> Page {{ page }} of {{ totalPages }} </span>
+
+        <button class="page-btn" (click)="nextPage()" [disabled]="page === totalPages">
+          Next →
+        </button>
+      </div>
+    </div>
+    <div>
+      <app-daily-quest-card></app-daily-quest-card>
+    </div>
   </div>
 </div>

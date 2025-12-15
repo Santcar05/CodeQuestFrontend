@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="top-card">
+    <div><h1>Today's Quests</h1></div>
+    <div>
+      <!-- Counter time left-->
+      <span class="time-left">⏰ Time Left: 12h 30m</span>
+    </div>
+  </div>
+  <div class="content">
+    <ng-content *ngFor="let quest of quests">
+      <div class="subcard">
+        <!-- Completed or not Icon -->
+        <div class="icon quest-status">
+          <img
+            src="{{ quest.completed ? 'completed.png' : 'incomplete.png' }}"
+            alt="quest status"
+            class="{{ quest.completed ? 'completed-icon' : 'incomplete-icon' }}"
+          />
+        </div>
+
+        <div class="info">
+          <strong>{{ quest.title }}</strong>
+          <span class="label">{{ quest.description }}</span>
+        </div>
+      </div>
+    </ng-content>
+  </div>
+</div>
