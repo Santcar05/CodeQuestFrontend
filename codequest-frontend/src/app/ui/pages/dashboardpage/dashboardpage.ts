@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
-import { Sidebar } from '../../components/sidebar/sidebar';
-import { Header } from '../../components/header/header';
-import { Button } from '../../shared/button/button';
+import { Component, inject, signal, computed } from '@angular/core';
+import { DashboardRepository } from '../../../domain/repositories/DashBoardRepository';
+import { GetDashboardStatsUseCase } from '../../../domain/usecases/GetDashBoardStatsUseCase';
+import { GetDashboardCoursesUseCase } from '../../../domain/usecases/GetDashBoardCoursesUseCase';
+import { PaginateCoursesUseCase } from '../../../domain/usecases/PaginateCoursesUseCase';
+
+// UI Components
 import { RecommendedChallenge } from '../../components/recommended-challenge/recommended-challenge';
 import { MinimalizedCourseCard } from '../../components/minimalized-course-card/minimalized-course-card';
 import { ProgressBar } from '../../shared/progress-bar/progress-bar';
@@ -15,44 +18,33 @@ import { DailyQuestCard } from '../../components/daily-quest-card/daily-quest-ca
   styleUrl: './dashboardpage.css',
 })
 export class Dashboardpage {
-  // Pagination
-  page = 1;
+  private repo = inject(DashboardRepository);
+
+  private getStatsUC = new GetDashboardStatsUseCase(this.repo);
+  private getCoursesUC = new GetDashboardCoursesUseCase(this.repo);
+  private paginateUC = new PaginateCoursesUseCase();
+
+  page = signal(1);
   pageSize = 4;
 
-  level = 5;
-  streak = 14;
+  stats = signal(this.getStatsUC.execute());
+  courses = signal(this.getCoursesUC.execute());
 
-  currentXP = 1250;
-  maxXP = 2000;
+  totalPages = computed(() => Math.ceil(this.courses().length / this.pageSize));
 
-  courses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-  get xpPercent(): number {
-    return (this.currentXP / this.maxXP) * 100;
-  }
-
-  /*
-  Pagination methods
-   */
-  get totalPages(): number {
-    return Math.ceil(this.courses.length / this.pageSize);
-  }
-
-  get paginatedCourses() {
-    const start = (this.page - 1) * this.pageSize;
-    const end = start + this.pageSize;
-    return this.courses.slice(start, end);
-  }
+  paginatedCourses = computed(() =>
+    this.paginateUC.execute(this.courses(), this.page(), this.pageSize)
+  );
 
   nextPage() {
-    if (this.page < this.totalPages) {
-      this.page++;
+    if (this.page() < this.totalPages()) {
+      this.page.update((v) => v + 1);
     }
   }
 
   prevPage() {
-    if (this.page > 1) {
-      this.page--;
+    if (this.page() > 1) {
+      this.page.update((v) => v - 1);
     }
   }
 }
