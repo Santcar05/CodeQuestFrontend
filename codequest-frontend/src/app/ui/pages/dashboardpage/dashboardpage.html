@@ -16,7 +16,7 @@
 
         <div class="info">
           <span class="label">Current Level</span>
-          <strong>Level {{ level }}</strong>
+          <strong>Level {{ stats().level }}</strong>
         </div>
       </div>
 
@@ -28,7 +28,7 @@
 
         <div class="info">
           <span class="label">Daily Streak</span>
-          <strong>{{ streak }} Days</strong>
+          <strong>{{ stats().streak }} Days</strong>
         </div>
       </div>
 
@@ -36,17 +36,39 @@
       <div class="card xp">
         <div class="xp-header">
           <span class="label">XP Progress</span>
-          <span class="xp-text">{{ currentXP }} / {{ maxXP }}</span>
+          <span class="xp-text">{{ stats().currentXP }} / {{ stats().maxXP }} </span>
         </div>
 
         <div class="progress">
-          <div class="bar" [style.width.%]="xpPercent"></div>
+          <app-progress-bar [value]="stats().currentXP" [max]="stats().maxXP"></app-progress-bar>
         </div>
       </div>
     </div>
   </div>
-  <app-button variant="primary"
-    >Start a new challenge
-    <img src="search.png" alt="aa" class="img-btn" />
-  </app-button>
+
+  <app-recommended-challenge
+    image="https://images.unsplash.com/photo-1555949963-aa79dcee981c"
+  ></app-recommended-challenge>
+
+  <h1 class="section-title">Your Courses</h1>
+  <div class="container-70-30">
+    <div class="courses-grid">
+      <ng-container *ngFor="let course of paginatedCourses()">
+        <app-minimalized-course-card />
+      </ng-container>
+
+      <div class="pagination">
+        <button class="page-btn" (click)="prevPage()" [disabled]="page() === 1">← Previous</button>
+
+        <span class="page-info">Page {{ page() }} of {{ totalPages() }} </span>
+
+        <button class="page-btn" (click)="nextPage()" [disabled]="page() === totalPages()">
+          Next →
+        </button>
+      </div>
+    </div>
+    <div>
+      <app-daily-quest-card></app-daily-quest-card>
+    </div>
+  </div>
 </div>

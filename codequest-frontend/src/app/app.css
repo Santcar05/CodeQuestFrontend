@@ -4,14 +4,20 @@
   background: #0d0d0d;
 }
 
-/* Sidebar */
+/* Sidebar fijo */
 app-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
   width: 260px;
   flex-shrink: 0;
+  z-index: 100;
 }
 
 /* Right side */
 .main {
+  margin-left: 260px; /* deja espacio al sidebar */
   flex: 1;
   display: flex;
   flex-direction: column;

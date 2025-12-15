@@ -1,0 +1,141 @@
+.card {
+  display: flex;
+  gap: 32px;
+  padding: 40px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #1a1a1a, #121212);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* LEFT */
+
+.content {
+  flex: 1;
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 122, 0, 0.15);
+  color: #ff7a00;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  margin: 24px 0 16px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+p {
+  max-width: 620px;
+  color: #b3b3b3;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* META */
+
+.meta {
+  display: flex;
+  gap: 28px;
+  margin: 28px 0 36px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #cfcfcf;
+  font-weight: 500;
+}
+
+.meta-item.xp {
+  color: #ff7a00;
+  font-weight: 700;
+}
+
+/* fake icons */
+
+.bar-icon,
+.clock-icon,
+.star-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.bar-icon {
+  background: #fbbc04;
+}
+
+.clock-icon {
+  background: #4c9aff;
+}
+
+.star-icon {
+  background: #ff7a00;
+}
+
+/* CTA */
+
+.cta {
+  padding: 14px 28px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #000;
+  background: linear-gradient(90deg, #ff7a00, #ff9a3d);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(255, 122, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+/* RIGHT */
+
+.preview {
+  width: 320px;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.live {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 999px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+}

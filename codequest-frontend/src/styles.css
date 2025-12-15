@@ -18,3 +18,16 @@ body {
   width: 32px;
   filter: invert(1);
 }
+
+.container-70-30 {
+  display: flex;
+  gap: 24px;
+}
+
+.container-70-30 > :first-child {
+  flex: 7;
+}
+
+.container-70-30 > :last-child {
+  flex: 3;
+}
