@@ -8,6 +8,10 @@ import { AuthRepositoryMock } from './data/source/inmemorydata/AuthRepositoryMoc
 import { MenuItemRepositoryMock } from './data/source/inmemorydata/MenuItemRepositoryMockImpl';
 import { DashboardRepository } from './domain/repositories/DashBoardRepository';
 import { DashboardRepositoryMock } from './data/source/inmemorydata/DashBoardRepositoryMockImpl';
+import { CourseUserRepository } from './domain/repositories/CourseUserRepository';
+import { CourseUserRepositoryMockImpl } from './data/source/inmemorydata/CourseUserRepositoryMockImpl';
+import { CourseRepository } from './domain/repositories/CourseRepository';
+import { CourseRepositoryMockImpl } from './data/source/inmemorydata/CourseRepositoryMockImpl';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,5 +21,7 @@ export const appConfig: ApplicationConfig = {
     { provide: AuthRepository, useClass: AuthRepositoryMock },
     { provide: MenuItemRepository, useClass: MenuItemRepositoryMock },
     { provide: DashboardRepository, useClass: DashboardRepositoryMock },
+    { provide: CourseUserRepository, useClass: CourseUserRepositoryMockImpl },
+    { provide: CourseRepository, useClass: CourseRepositoryMockImpl },
   ],
 };

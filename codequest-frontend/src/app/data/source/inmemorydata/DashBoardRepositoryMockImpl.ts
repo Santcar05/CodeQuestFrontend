@@ -1,5 +1,6 @@
 import { DashboardRepository } from '../../../domain/repositories/DashBoardRepository';
-
+import { MOCK_DB } from '../../../seed/inMemoryData';
+import { CourseUserRepository } from '../../../domain/repositories/CourseUserRepository';
 export class DashboardRepositoryMock implements DashboardRepository {
   getStats() {
     return {
@@ -11,9 +12,10 @@ export class DashboardRepositoryMock implements DashboardRepository {
   }
 
   getCourses() {
-    return Array.from({ length: 10 }, (_, i) => ({
-      id: i + 1,
-      title: `Course ${i + 1}`,
-    }));
+    // Return a list of mock courses by User Id
+    return MOCK_DB.courses;
+  }
+  getDailyQuests() {
+    return MOCK_DB.dailyQuests;
   }
 }
