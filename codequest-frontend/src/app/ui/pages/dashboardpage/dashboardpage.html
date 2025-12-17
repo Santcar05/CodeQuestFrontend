@@ -55,15 +55,13 @@
     <div class="courses-grid">
       <ng-container *ngFor="let course of paginatedCourses()">
         <app-minimalized-course-card
-          [title]="'Course ' + course.id"
-          ,
+          [title]="course.title"
           [description]="course.description"
-          ,
           [progress]="course.progress"
           [maxProgress]="100"
           [icon]="'badge.png'"
-        >
-        </app-minimalized-course-card>
+          (click)="openCourse(course.id)"
+        />
       </ng-container>
 
       <div class="pagination">

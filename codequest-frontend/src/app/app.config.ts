@@ -12,6 +12,9 @@ import { CourseUserRepository } from './domain/repositories/CourseUserRepository
 import { CourseUserRepositoryMockImpl } from './data/source/inmemorydata/CourseUserRepositoryMockImpl';
 import { CourseRepository } from './domain/repositories/CourseRepository';
 import { CourseRepositoryMockImpl } from './data/source/inmemorydata/CourseRepositoryMockImpl';
+import { UserRepository } from './domain/repositories/UserRepository';
+import { UserRepositoryMockImpl } from './data/source/inmemorydata/UserRepositoryMockImpl';
+import { GetCourseDetailUseCase } from './domain/usecases/GetCourseDetailUseCase';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -23,5 +26,6 @@ export const appConfig: ApplicationConfig = {
     { provide: DashboardRepository, useClass: DashboardRepositoryMock },
     { provide: CourseUserRepository, useClass: CourseUserRepositoryMockImpl },
     { provide: CourseRepository, useClass: CourseRepositoryMockImpl },
+    { provide: UserRepository, useClass: UserRepositoryMockImpl },
   ],
 };

@@ -1,0 +1,28 @@
+<div *ngIf="isLoading()">Cargando curso...</div>
+
+<div *ngIf="hasError()">Error al cargar curso</div>
+
+<div *ngIf="data() as d">
+  <app-course-hero
+    [title]="d.title"
+    [description]="d.description"
+    [imageUrl]="d.imageUrl"
+    [level]="d.level"
+    [instructorName]="d.instructorName"
+    [instructorAvatar]="d.instructorAvatar"
+    [progress]="d.progress"
+    [xp]="d.xp"
+    [totalPoints]="d.totalPoints"
+    [category]="d.category"
+  />
+
+  <app-course-learning [description]="d.description" [level]="d.level" [category]="d.category" />
+
+  <app-course-modules [courseId]="d.id" />
+
+  <app-course-requirements [level]="d.level" />
+
+  <app-course-reviews [courseId]="d.id" />
+
+  <app-course-related [category]="d.category" [title]="d.title" />
+</div>

@@ -9,6 +9,7 @@
 app-recommended-challenge {
   margin: 0 32px;
 }
+
 #greeting-text {
   margin-bottom: 24px;
   display: flex;
@@ -135,6 +136,10 @@ app-recommended-challenge {
   font-size: 42px;
   font-weight: 700;
   margin: 32px 0 16px 0;
+}
+
+app-minimalized-course-card:hover {
+  cursor: pointer;
 }
 
 /* PAGINATION */

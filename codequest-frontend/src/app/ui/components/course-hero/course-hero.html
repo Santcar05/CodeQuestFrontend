@@ -1,0 +1,56 @@
+<div class="hero-section">
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a class="breadcrumb-link">Cursos</a>
+      <span>›</span>
+      <a class="breadcrumb-link">{{ category }}</a>
+      <span>›</span>
+      <span class="breadcrumb-current">{{ title }}</span>
+    </div>
+
+    <div class="hero-main">
+      <div class="hero-info">
+        <div class="course-badges">
+          <span class="level-badge" [attr.data-level]="level">
+            {{ level }}
+          </span>
+        </div>
+
+        <h1 class="course-title">{{ title }}</h1>
+        <p class="course-description">{{ description }}</p>
+
+        <div class="course-stats">
+          <div class="stat-item">
+            <span class="stat-value">{{ xp }}</span>
+            <span class="stat-label">XP</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-value">{{ totalPoints }}</span>
+            <span class="stat-label">CodeCoins</span>
+          </div>
+        </div>
+
+        <div class="instructor-info">
+          <img class="instructor-avatar" [src]="instructorAvatar" />
+          <div class="instructor-details">
+            <span class="instructor-label">Instructor</span>
+            <span class="instructor-name">{{ instructorName }}</span>
+          </div>
+        </div>
+
+        <button class="enroll-btn">Comenzar Curso</button>
+      </div>
+
+      <div class="hero-video">
+        <div class="video-container">
+          <img class="video-thumbnail" [src]="imageUrl" />
+          <div class="video-overlay">
+            <button class="video-play-btn">▶</button>
+            <span class="video-label">Vista previa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

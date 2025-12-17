@@ -12,9 +12,9 @@
         <!-- Completed or not Icon -->
         <div class="icon quest-status">
           <img
-            src="{{ quest.completed ? 'completed.png' : 'incomplete.png' }}"
+            src="{{ quest.isCompleted ? 'completed.png' : 'incomplete.png' }}"
             alt="quest status"
-            class="{{ quest.completed ? 'completed-icon' : 'incomplete-icon' }}"
+            class="{{ quest.isCompleted ? 'completed-icon' : 'incomplete-icon' }}"
           />
         </div>
 

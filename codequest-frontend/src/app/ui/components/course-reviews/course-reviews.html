@@ -1,0 +1,10 @@
+<section class="reviews-section section-card">
+  <h2 class="section-title">Reseñas</h2>
+
+  <div class="reviews-list">
+    <div class="review-card" *ngFor="let review of reviews">
+      <strong>{{ review.user }}</strong>
+      <p>{{ review.comment }}</p>
+    </div>
+  </div>
+</section>

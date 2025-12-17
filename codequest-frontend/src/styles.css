@@ -31,3 +31,19 @@ body {
 .container-70-30 > :last-child {
   flex: 3;
 }
+
+/* Section title */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+  color: #ffffff;
+}
+
+.section-title svg {
+  color: #ff5a00;
+  flex-shrink: 0;
+}

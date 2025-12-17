@@ -15,7 +15,7 @@ import { GetCoursesByUserIdUseCase } from '../../../domain/usecases/GetCoursesBy
 import { CourseRepository } from '../../../domain/repositories/CourseRepository';
 import { GetCoursesUserByUserId } from '../../../domain/usecases/GetCoursesUserByUserId';
 import { GetDashBoardDailyQuestsUseCase } from '../../../domain/usecases/GetDashBoardDailyQuestsUseCase';
-
+import { Router } from '@angular/router';
 // Interface for Course On componente
 export interface PaginateUC {
   id: number;
@@ -34,6 +34,7 @@ export interface PaginateUC {
   styleUrls: ['./dashboardpage.css'],
 })
 export class Dashboardpage {
+  constructor(private router: Router) {}
   private repo = inject(DashboardRepository);
 
   private getStatsUC = new GetDashboardStatsUseCase(this.repo);
@@ -86,5 +87,9 @@ export class Dashboardpage {
     if (this.page() > 1) {
       this.page.update((v) => v - 1);
     }
+  }
+
+  openCourse(courseId: number) {
+    this.router.navigate(['/courses', courseId]);
   }
 }

@@ -1,0 +1,42 @@
+/* Reviews Section */
+.reviews-section {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Reviews list */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Review card */
+.review-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  animation: slideUp 0.6s ease-out both;
+}
+
+/* Hover */
+.review-card:hover {
+  border-color: rgba(255, 90, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* User name */
+.review-card strong {
+  display: block;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+/* Comment text */
+.review-card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+}

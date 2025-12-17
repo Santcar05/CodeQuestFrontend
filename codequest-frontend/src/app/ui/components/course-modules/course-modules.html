@@ -1,0 +1,15 @@
+<section class="modules-section section-card">
+  <h2 class="section-title">Contenido del Curso</h2>
+
+  <div class="modules-list">
+    <div class="module-item" *ngFor="let module of modules; let i = index">
+      <div class="module-header">
+        <div>
+          <span class="module-number">Módulo {{ i + 1 }}</span>
+          <h3 class="module-title">{{ module.title }}</h3>
+        </div>
+        <span class="module-duration">{{ module.duration }}</span>
+      </div>
+    </div>
+  </div>
+</section>

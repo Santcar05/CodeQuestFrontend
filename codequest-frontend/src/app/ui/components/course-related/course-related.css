@@ -1,0 +1,47 @@
+/* Related section */
+.related-section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Grid of related courses */
+.related-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Related course card */
+.related-course-card {
+  background: linear-gradient(135deg, #0c0e10 0%, #1a1f26 100%);
+  border: 1px solid rgba(255, 90, 0, 0.15);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.related-course-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: #ff5a00;
+  box-shadow: 0 12px 32px rgba(255, 90, 0, 0.3);
+}
+
+/* Card content */
+.related-course-content {
+  padding: 1.5rem;
+}
+
+/* Course title */
+.related-course-content h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .related-courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
