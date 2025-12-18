@@ -1,0 +1,13 @@
+<div class="methodologies-container">
+  <button
+    *ngFor="let method of methods"
+    class="method-btn"
+    [class.active]="selectedMethod.id === method.id"
+    (click)="selectMethod(method)"
+  >
+    <span class="icon">{{ method.icon }}</span>
+    <span class="label">{{ method.label }}</span>
+
+    <span *ngIf="method.recommended" class="badge"> RECOMENDADO </span>
+  </button>
+</div>

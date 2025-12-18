@@ -12,6 +12,13 @@ export const routes: Routes = [
       import('./ui/pages/course-detail-page/course-detail-page').then((m) => m.CourseDetailPage),
   },
   {
+    path: 'learning-course',
+    loadComponent: () =>
+      import('./ui/pages/learning-course-page/learning-course-page').then(
+        (m) => m.LearningCoursePage
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

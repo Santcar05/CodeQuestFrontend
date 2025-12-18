@@ -1,5 +1,7 @@
 import { User } from '../domain/models/User';
+import { LessonVideo } from '../domain/models/lesson/LessonVideo';
 import { MenuItem } from '../domain/models/ui/MenuItem';
+import { LearningMethod } from '../domain/models/lesson/LearningMethod';
 export const MOCK_DB = {
   user: <User>{
     id: 1,
@@ -19,7 +21,7 @@ export const MOCK_DB = {
     },
     {
       id: 2,
-      name: 'Instructor Example',
+      name: 'Carlos Rios',
       role: 'Instructor',
       avatar: 'avatarInstructor.png',
       email: '1oJQq@example.com',
@@ -37,8 +39,9 @@ export const MOCK_DB = {
   courses: [
     {
       id: 1,
-      title: 'Course 1',
-      description: 'Description of course 1',
+      title: 'Introducción a la Programación con C++ CodeQuest',
+      description:
+        'Este curso te llevará desde los conceptos básicos hasta temas avanzados en C++. Aprenderás a escribir código eficiente y a desarrollar aplicaciones completas. Comenzando desde cero, este curso es perfecto para principiantes y aquellos que buscan fortalecer sus habilidades en programación.',
       level: 'Beginner',
       imageUrl: 'https://i.imgur.com/XSgpcs0.gif',
       category: 'Category 1',
@@ -106,6 +109,32 @@ export const MOCK_DB = {
     { id: 3, userId: 1, courseId: 3, progress: 80 },
     { id: 4, userId: 2, courseId: 4, progress: 10 },
     { id: 5, userId: 2, courseId: 5, progress: 0 },
+  ],
+
+  lessonVideos: <LessonVideo[]>[
+    {
+      id: 'vid-yt-1',
+      lessonId: 'lesson-1',
+      title: 'Introducción a C++ (YouTube)',
+      sourceType: 'YOUTUBE',
+      youtubeId: 'vLnPwxZdW4Y',
+      duration: 600,
+      progress: 0,
+      markers: [
+        { time: 40, label: '¿Qué es C++?' },
+        { time: 180, label: 'Variables' },
+      ],
+    },
+    {
+      id: 'vid-local-1',
+      lessonId: 'lesson-2',
+      title: 'Variables en C++ (Local)',
+      sourceType: 'LOCAL',
+      videoUrl: 'assets/videos/cpp-variables.mp4',
+      duration: 720,
+      progress: 0,
+      markers: [{ time: 60, label: 'Ejemplo' }],
+    },
   ],
 };
 
